@@ -1,104 +1,73 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import KindeIcon from "./KindeIcon";
-import SmallKindeIcon from "./SmallKindeIcon";
-
 export default function UserMenu() {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
     return (
-        <div kui-dropdown="true">
-            <button
-                className="l-app-header__menu-button"
-                aria-haspopup="true"
-                aria-expanded={isOpen}
-                onClick={toggleMenu}
-            >
-                Menu
-            </button>
-            <a
-                className="l-app-header__help-center-link"
-                href="https://docs.kinde.com"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                Docs
-            </a>
-            <a
-                className="kui-button kui-button--primary kui-button--icon-leading kui-button--size-default kui-util-button-stateless-1 kui-button--specialised-button-upgrade"
-                href="admin/cx/_:nav&m:upgrade::_:submenu&s:plan_selection"
-            >
-                <span className="kui-button__icon-leading">
-                    <KindeIcon />
-                </span>
-                <span className="kui-button__text">Upgrade</span>
-            </a>
-            <div className={`kui-dropdown-container ${isOpen ? "show" : ""}`}>
+        <div className="relative inline-block text-left">
+            <div>
                 <button
-                    className="kui-dropdown-trigger"
+                    className="flex items-center justify-center w-10 h-10 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                     aria-expanded={isOpen}
                     onClick={toggleMenu}
                 >
-                    <span className="kui-avatar">
+                    <Image
+                        className="rounded-full"
+                        src="https://avatars.githubusercontent.com/u/93040506?v=4"
+                        alt="Sachin Mahato avatar"
+                        width={40}
+                        height={40}
+                    />
+                </button>
+            </div>
+            {isOpen && (
+                <div className="absolute right-0 mt-2 w-64 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+                    <div className="p-4 flex items-center">
                         <Image
-                            className="kui-avatar__image"
+                            className="rounded-full"
                             src="https://avatars.githubusercontent.com/u/93040506?v=4"
                             alt="Sachin Mahato avatar"
                             width={40}
                             height={40}
                         />
-                    </span>
-                </button>
-                {isOpen && (
-                    <div className="kui-dropdown">
-                        <div className="l-app-header__user-menu">
-                            <span className="kui-avatar">
-                                <Image
-                                    className="kui-avatar__image"
-                                    src="https://avatars.githubusercontent.com/u/93040506?v=4"
-                                    alt="Sachin Mahato avatar"
-                                    width={40}
-                                    height={40}
-                                />
-                            </span>
-                            <div className="l-app-header__user-menu-name kui-util-truncate-text">
-                                <div className="kui-util-type-subhead-1">
-                                    Sachin Mahato
-                                </div>
-                                <a
-                                    className="kui-util-type-body-caption"
-                                    href="mailto:sachin333777@outlook.com"
-                                >
-                                    sachin333777@outlook.com
-                                </a>
+                        <div className="ml-3">
+                            <div className="text-sm font-medium text-gray-900">
+                                Sachin Mahato
                             </div>
+                            <a
+                                className="text-sm text-gray-500"
+                                href="mailto:sachin333777@outlook.com"
+                            >
+                                sachin333777@outlook.com
+                            </a>
                         </div>
-                        <nav aria-label="User menu">
-                            <ul>
-                                <li>
-                                    <a
-                                        className="kui-dropdown-menu__item"
-                                        href="https://app.kinde.com/account/cx/_:nav&m:manage_business&org_code:org_85036a1337868f85::_:submenu&s:list"
-                                    >
-                                        Account details
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        className="kui-dropdown-menu__item"
-                                        href="/admin-logout"
-                                    >
-                                        Sign out
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
                     </div>
-                )}
-            </div>
+                    <div className="border-t border-gray-100"></div>
+                    <nav aria-label="User menu" className="py-1">
+                        <ul>
+                            <li>
+                                <a
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    href="https://app.kinde.com/account/cx/_:nav&m:manage_business&org_code:org_85036a1337868f85::_:submenu&s:list"
+                                >
+                                    Account details
+                                </a>
+                            </li>
+                            <li>
+                                <a
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    href="/admin-logout"
+                                >
+                                    Sign out
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            )}
         </div>
     );
 }

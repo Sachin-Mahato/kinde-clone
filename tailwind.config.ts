@@ -52,30 +52,29 @@ export default {
                     "5": "hsl(var(--chart-5))",
                 },
                 gray: {
-                    800: "#2b2b2b", // Added custom gray color
+                    800: "#2b2b2b",
                 },
             },
             fontFamily: {
-                body: ["Inter", "sans-serif"], // Added Inter font
+                body: ["Inter", "sans-serif"],
             },
             fontSize: {
-                base: "1rem", // Added base font size
+                base: "1rem",
             },
             letterSpacing: {
-                tighter: "-0.005em", // Added custom letter-spacing
+                tighter: "-0.005em",
             },
             lineHeight: {
-                relaxed: "1.5", // Added custom line-height
+                relaxed: "1.5",
             },
             boxSizing: {
-                border: "border-box", // Added custom box-sizing
+                border: "border-box",
             },
             spacing: {
-                headerHeight: "var(--header-height)",
                 headerGap: "var(--header-gap)",
                 gutter: "var(--gutter)",
                 sidebarWidth: "var(--sidebar-width)",
-                scrollPaddingTop: "6.5rem", // Added custom scroll padding top
+                scrollPaddingTop: "6.5rem",
             },
             gridTemplateColumns: {
                 layout: "var(--gutter) var(--sidebar-width) 3rem 1fr var(--gutter)",

@@ -1,7 +1,8 @@
-const KindeLogo = () => (
+import { cn } from "@/lib/utils";
+const KindeLogo = ({ className }: { className?: string }) => (
     <svg
         aria-labelledby="kui_kinde_logo_title"
-        className="kui-kinde-logo"
+        className={cn("kui-kinde-logo", className)}
         role="img"
         viewBox="0 0 423.335 137.71"
         width="73"
